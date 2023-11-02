@@ -6,7 +6,12 @@ block content
     .container-fluid 
       .row
         each entertain, index in results
-            .col-sm-2
+            .col-sm-2(onclick=`buy(${index})`)
               p Movies: #{entertain.Movies}
               p Genre: #{entertain.Genre}
               p Budget: #{entertain.Budget}
+
+  script.
+    function buy(index) {
+      alert('You purchased item ' + (index+1));
+    }
